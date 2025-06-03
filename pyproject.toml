@@ -1,0 +1,10 @@
+[project]
+name = "python_decorators_generators"
+version = "0.1.0"
+
+[tool.setuptools]
+packages = ["decorators", "generators"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
