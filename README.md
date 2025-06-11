@@ -56,19 +56,34 @@ python-decorators-generators/
 │   ├── sliding_window.py
 │   ├── paginated_api_reader.py
 │   ├── batched_iterable.py
-│   └── directory_watcher.py
+│   ├── directory_watcher.py
 │   └── csv_row_reader.py
 │
 ├── examples/
 │   └── demo_<name>.py
 │
 ├── tests/
-│   └── test_<name>.py
+│   ├── test_logging.py
+│   ├── test_retry.py
+│   ├── test_cache.py
+│   ├── test_time.py
+│   ├── test_once.py
+│   ├── test_memoize.py
+│   ├── test_benchmark.py
+│   ├── test_deprecated.py
+│   ├── test_async_safe.py
+│   ├── test_fibonacci.py
+│   ├── test_file_chunker.py
+│   ├── test_tail_reader.py
+│   ├── test_sliding_window.py
+│   ├── test_paginated_api_reader.py
+│   ├── test_batched_iterable.py
+│   ├── test_directory_watcher.py
+│   └── test_csv_row_reader.py
 │
 ├── pyproject.toml
 ├── requirements.txt
 └── README.md
-
 ```
 
 ---
