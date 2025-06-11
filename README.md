@@ -4,7 +4,7 @@ A curated collection of production-ready, reusable Python decorators and generat
 
 This package includes:
 
-- ✅ Common decorators like logging, retrying, caching, and timing
+- ✅ Common decorators like logging, retrying, caching, timing, and more
 - ✅ Generators for streaming data, infinite sequences, and efficient file processing
 - ✅ Unit tests and GitHub Actions CI
 - ✅ Editable install via `pyproject.toml` for clean imports
@@ -39,47 +39,71 @@ time_execution Logs how long a function takes to run
 ```bash
 python-decorators-generators/
 ├── decorators/
-│ ├── logging*decorator.py
-│ ├── retry_decorator.py
-│ ├── cache_decorator.py
-│ └── time_decorator.py
+│   ├── logging_decorator.py
+│   ├── retry_decorator.py
+│   ├── cache_decorator.py
+│   ├── time_decorator.py
+│   ├── once.py
+│   ├── memoize.py
+│   ├── benchmark.py
+│   ├── deprecated.py
+│   └── async_safe.py
 │
 ├── generators/
-│ ├── fibonacci.py
-│ ├── file_chunker.py
-│ └── tail_reader.py
+│   ├── fibonacci.py
+│   ├── file_chunker.py
+│   ├── tail_reader.py
+│   ├── sliding_window.py
+│   ├── paginated_api_reader.py
+│   ├── batched_iterable.py
+│   └── directory_watcher.py
+│   └── csv_row_reader.py
 │
 ├── examples/
-│ └── demo*<name>.py
+│   └── demo_<name>.py
 │
 ├── tests/
-│ └── test\_<name>.py
+│   └── test_<name>.py
 │
 ├── pyproject.toml
 ├── requirements.txt
 └── README.md
+
 ```
 
 ---
 
 ### ✅ Decorators Included
 
-| Decorator            | Module                         | Description                                                               |
-| -------------------- | ------------------------------ | ------------------------------------------------------------------------- |
-| `log_execution`      | `decorators.logging_decorator` | Logs function calls, arguments, return values, execution time, and errors |
-| `retry_on_exception` | `decorators.retry_decorator`   | Retries a function on failure, with customizable retry count and delay    |
-| `cache_result`       | `decorators.cache_decorator`   | In-memory caching with configurable TTL                                   |
-| `time_execution`     | `decorators.time_decorator`    | Logs how long a function takes to run                                     |
+| Decorator             | Module                           | Description                                                               |
+| --------------------- | -------------------------------- | ------------------------------------------------------------------------- |
+| `log_execution`       | `decorators.logging_decorator`   | Logs function calls, arguments, return values, execution time, and errors |
+| `retry_on_exception`  | `decorators.retry_decorator`     | Retries a function on failure, with customizable retry count and delay    |
+| `cache_result`        | `decorators.cache_decorator`     | In-memory caching with configurable TTL                                   |
+| `time_execution`      | `decorators.time_decorator`      | Logs how long a function takes to run                                     |
+| `once`                | `decorators.once`                | Ensures a function runs only once                                         |
+| `memoize`             | `decorators.memoize`             | Simple non-TTL in-memory caching                                          |
+| `benchmark`           | `decorators.benchmark`           | Logs function execution time, warns if it exceeds a threshold             |
+| `deprecated`          | `decorators.deprecated`          | Emits a warning when a deprecated function is called                      |
+| `suppress_exceptions` | `decorators.suppress_exceptions` | Suppresses specified exceptions and optionally logs them                  |
+| `rate_limiter`        | `decorators.rate_limiter`        | Limits how frequently a function can be called                            |
+| `validate_types`      | `decorators.validate_types`      | Runtime type checking for arguments and return values                     |
+| `async_safe`          | `decorators.async_safe`          | Makes sync functions awaitable in async contexts                          |
 
 ---
 
 ### 🔁 Generators Included
 
-| Generator        | Module                    | Description                                                   |
-| ---------------- | ------------------------- | ------------------------------------------------------------- |
-| `fibonacci()`    | `generators.fibonacci`    | Infinite lazy sequence of Fibonacci numbers                   |
-| `file_chunker()` | `generators.file_chunker` | Reads large files in fixed-size chunks using lazy loading     |
-| `tail_reader()`  | `generators.tail_reader`  | Mimics `tail -f` to stream new lines from a file in real-time |
+| Generator                | Module                             | Description                                                   |
+| ------------------------ | ---------------------------------- | ------------------------------------------------------------- |
+| `fibonacci()`            | `generators.fibonacci`             | Infinite lazy sequence of Fibonacci numbers                   |
+| `file_chunker()`         | `generators.file_chunker`          | Reads large files in fixed-size chunks using lazy loading     |
+| `tail_reader()`          | `generators.tail_reader`           | Mimics `tail -f` to stream new lines from a file in real-time |
+| `sliding_window()`       | `generators.sliding_window`        | Yields a sliding window over an iterable                      |
+| `paginated_api_reader()` | `generators.paginated_api_reader`  | Yields results from paginated API endpoints                   |
+| `batched_iterable()`     | `generators.batched_iterable`      | Yields fixed-size batches from any iterable                   |
+| `directory_watcher()`    | `generators.directory_watcher`     | Yields filenames as new files appear in a directory           |
+| `csv_row_reader()`       | `generators.csv_row_reader	Streams` | rows from large CSVs as dictionaries                          |
 
 ---
 
