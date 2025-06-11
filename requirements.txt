@@ -2,3 +2,5 @@ iniconfig==2.1.0
 packaging==25.0
 pluggy==1.6.0
 pytest==8.3.5
+pytest-asyncio==1.0.0
+-e git+ssh://git@github.com/manas-shinde/python-decorators-generators.git@ff0f7a6f7ec77778a80321d6d03c219b1e2ba92a#egg=python_decorators_generators
